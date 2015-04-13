@@ -25,7 +25,7 @@ def connect():
 		"port": 8001,
 		"user": "root",
 		"passwd": "matrix",
-		"db": "library"
+		"db": "epub_reader"
 	}
 	g.conn = MySQLdb.connect(**mysql_config)
 	g.cursor = g.conn.cursor()
