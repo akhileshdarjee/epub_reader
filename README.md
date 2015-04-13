@@ -14,6 +14,10 @@
 
 * **Append app.py** with your MySQL credentials.
 
+* **Navigate** to app folder and run -- `python app.py`
+
 * **Login Credentials**
   - Login ID: admin
   - Password: admin123
+
+Enjoy!!!
