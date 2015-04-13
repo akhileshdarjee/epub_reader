@@ -209,7 +209,7 @@ def share():
 def index():
 	if "user" in session:
 		return redirect(url_for('open_app'))
-	return render_template("index.html")
+	return render_template("login.html")
 
 
 # registration section
@@ -587,7 +587,7 @@ def open_app():
 def logout():
 	# remove all sessions and cookies related to that user
 	session.pop('user', None)
-	resp = make_response(render_template('index.html'))
+	resp = make_response(render_template('login.html'))
 
 	resp.set_cookie("username", "", expires=0)
 	resp.set_cookie("login_id", "", expires=0)
