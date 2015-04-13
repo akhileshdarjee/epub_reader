@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>ePub Reader</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<link rel="stylesheet" href="../files/css/epub/basic.css">
+		<link rel="stylesheet" href="../files/css/epub/main.css">
+		<link rel="stylesheet" href="../files/css/epub/normalize.css">
+		<link rel="stylesheet" href="../files/css/epub/popup.css">
+
+		<!-- EPUBJS Renderer -->
+		<script src="../files/js/epub/epub.min.js"></script>
+
+		<!-- Hooks -->
+		<script async src="../files/js/epub/hooks.min.js"></script>
+
+		<!-- Reader -->
+		<script async="" src="../files/js/epub/reader.min.js"></script>
+
+		<!-- Zip JS -->
+		<script src="../files/js/epub/libs/zip.min.js"></script>  
+
+		<script>
+
+			EPUBJS.filePath = "../files/js/epub/libs/";
+			EPUBJS.cssPath = "../files/css/epub/";
+
+		</script>
+
+		<script>
+			"use strict";
+
+			var Book = ePub("../{{ book_details.book_path }}");
+
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="titlebar">
+				<span id="book-title">{{ book_details.book_name }} - {{ book_details.author }}</span>
+			</div>
+			<div id="divider" class="show"></div>
+			<div id="prev" onclick="Book.prevPage();" class="arrow">‹</div>
+			<div id="area"></div>
+			<div id="next" onclick="Book.nextPage();" class="arrow">›</div>
+		</div>
+
+		<script>Book.renderTo("area");</script>
+	</body>
+</html>

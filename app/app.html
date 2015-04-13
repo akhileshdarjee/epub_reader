@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Library</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body style="background-color:#f5ede3;">
+		{% include "misc/navbar.html" %}
+		{% include "misc/msgbox.html" %}
+		<div class="container main-body" style="padding-top:60px;">
+			<div class="case-wrapper" data-module-name="Book" data-url="/book">
+					<center><div class="module-icon" style="background-color:#428bca;">
+						<i class="fa fa-book"></i>
+					</div></center>
+					<div class="module-label">Book</div>
+			</div>
+			<div class="case-wrapper" data-module-name="Profile" data-url="/profile">
+				<center><div class="module-icon" style="background-color:#5cb85c;">
+					<i class="fa fa-file-text"></i>
+				</div></center>
+				<div class="module-label">Profile</div>
+			</div>
+			<div class="case-wrapper" data-module-name="Search" data-url="/search">
+				<center><div class="module-icon" style="background-color:#e67e22;">
+					<i class="fa fa-search"></i>
+				</div></center>
+				<div class="module-label">Search</div>
+			</div>
+			<div class="case-wrapper" data-module-name="issue" data-url="/issue">
+				<center><div class="module-icon" style="background-color:#d9534f;">
+					<i class="fa fa-bug"></i>
+				</div></center>
+				<div class="module-label">Issues</div>
+			</div>
+			<div class="case-wrapper" data-module-name="Book Shelf" data-url="/book_shelf">
+				<center><div class="module-icon" style="background-color:#8e44ad;">
+					<i class="fa fa-th"></i>
+				</div></center>
+				<div class="module-label">Book Shelf</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".case-wrapper").click(function() {
+				window.location = $(this).attr("data-url");
+			});
+		</script>
+	</body>
+</html>

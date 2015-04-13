@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Library</title>
+		{% include "misc/headers.html" %}
+		<link rel="stylesheet" type="text/css" href="../files/css/shelf/book_shelf.css">
+		<style type="text/css">
+			body { background:#54493e url(../files/img/shelf_background.png) repeat;}
+		</style>
+	</head>
+	<body>
+		{% include "misc/navbar.html" %}
+		{% include "misc/msgbox.html" %}
+		<div class="container">
+			<div class="row">
+				<div id="bookshelf_slider" style="width: 100%; margin-top:80px;">
+					<div class="panel-title" id="panel_title">
+						<div class="col-md-3">
+							<div class="input-group margin-bottom-sm">
+								<input type="text" name="search_text" id="search_text" class="form-control" placeholder="Book Name" autocomplete="on">
+								<span class="input-group-btn">
+									<button class="btn btn-default" id="search_books">
+										<i class="fa fa-search fa-fw"></i>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="btn-group">
+								<button class="btn btn-success" id="refresh_books">
+									<i class="fa fa-refresh"></i> Refresh
+								</button>
+								<button class="btn btn-primary" id="check_all">
+									<i class="fa fa-check"></i> Check all
+								</button>
+								<button class="btn btn-danger" id="delete">
+									<i class="fa fa-times"></i> Delete
+								</button>
+							</div>
+							&nbsp;
+							<div class="btn-group">
+								<a class="btn btn-default" id="download">
+									<i class="fa fa-download"></i> Download
+								</a>
+								<button class="btn btn-default" id="share">
+									<i class="fa fa-share"></i> Share
+								</button>
+							</div>
+						</div>
+						<div class="col-md-2" style="text-align: right;">
+							<button class="btn btn-default" id="add-book">
+								<i class="fa fa-plus"></i> Add Book
+							</button>
+						</div>
+					</div>
+
+					{% autoescape false %}
+						{{ panels }}
+					{% endautoescape %}
+
+					<div class="panel_bar" id="panel_bar" style="width: 100%;"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../files/js/modules/book_shelf.js"></script>
+	</body>
+</html>

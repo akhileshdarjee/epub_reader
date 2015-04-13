@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Profile</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body>
+		{% include "misc/navbar.html" %}
+		<div class="module-banner">
+			<p class="bg-warning text-warning module-title">
+				<i class="fa fa-file-text"></i><strong> {{ profile.id }}</strong>
+			</p>
+		</div>
+		{% include "misc/msgbox.html" %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="block-center">
+						<form name="profile" id="profile" action="/profile/{{ profile.id }}" method="POST">
+							<div class="checkbox">
+								<label class="control-label">
+									{% if profile.enabled %}
+										<input type="checkbox" name="enabled" data-name="enabled" checked>Enabled
+									{% else %}
+										<input type="checkbox" name="enabled" data-name="enabled">Enabled
+									{% endif %}
+								</label>
+							</div>
+							<div class="form-group">
+								<input type="hidden" class="form-control" name="id" autocomplete="off" data-name="id" data-mandatory="yes" value="{{ profile.id }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">First Name</label>
+								<input type="text" class="form-control" name="first_name" autocomplete="off" data-name="first_name" data-mandatory="yes" value="{{ profile.first_name }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Last Name</label>
+								<input type="text" class="form-control" name="last_name" autocomplete="off" data-name="last_name" data-mandatory="yes" value="{{ profile.last_name }}">
+							</div>
+							<div class="form-group">
+								{% if profile.record is sameas "new" %}
+									<label class="control-label">Login ID</label>
+									<input type="text" class="form-control" name="login_id" autocomplete="off" data-name= "login_id" data-mandatory="yes" value="{{ profile.login_id }}">
+								{% else %}
+									<input type="hidden" class="form-control" name="login_id" autocomplete="off" data-name= "login_id" data-mandatory="yes" value="{{ profile.login_id }}">
+								{% endif %}
+							</div>
+							<div class="form-group">
+								<label class="control-label">Password</label>
+								<input type="password" class="form-control" name="password" autocomplete="off" data-name="password" data-mandatory="yes" value="{{ profile.password }}">
+							</div>
+							<div class="form-group">
+								{% if profile.record is sameas "new" %}
+									<label class="control-label">Role</label>
+									<select class="form-control" name="role" data-name="role" data-mandatory="yes">
+										<option>User</option>
+										<option>Administrator</option>
+									</select>
+								{% else %}
+									<input type="hidden" class="form-control" name="role" autocomplete="off" data-name= "role" data-mandatory="yes" value="{{ profile.role }}">
+								{% endif %}
+							</div>
+							{% if profile.record is sameas "existing" %}
+								<div class="form-group">
+									<a href="/deactivate" class="btn btn-danger">Delete my account :'(</a>
+								</div>
+							{% endif %}
+							<br>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success">
+									<i class="fa fa-save"></i> Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../files/js/modules/profile.js"></script>
+	</body>
+</html>

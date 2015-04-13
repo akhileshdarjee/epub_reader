@@ -1,0 +1,77 @@
+
+/* ------- panel title ------- */
+
+.panel-title {
+	background: #93643a url(../../img/bookshelf_top.jpg) repeat;
+	width: 100%;
+	height: 54px;
+	margin: 0 auto;
+	padding-top: 10px;
+	overflow: hidden; 
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+
+
+.panel_slider {
+	position:relative; border-bottom:1px solid #333; border-bottom-color:#aa7f55; width:100%; height:300px; margin:auto; padding-top:0px; overflow: hidden;
+	box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3); -moz-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3); -webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3);
+	background:#93643a url(../../img/bookshelf_body.jpg) repeat; background-position:0 30px;
+}
+
+
+/* ------- panel bar ------- */
+
+.panel_bar {
+	background:#93643a url(../../img/bookshelf_bottom.jpg) repeat-x left bottom; width:960px; height:60px; text-align:center; margin:0 auto; overflow: hidden;
+	border-top:none; font-size:12px; font-family:Arial, Helvetica, sans-serif; letter-spacing:1px;
+	box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3); -moz-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3); -webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.button_items { margin-top:10px; position:relative; height:20px; }
+.button_bar { margin-left:10px; float:left; cursor:pointer; display:block; }
+.button_bar a { text-decoration:none; color:#f5cc9a; text-shadow:1px 1px 1px #000; outline:none; }
+
+
+/* ------- slides ------- */
+
+.slide_animate {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	left: 0px;
+	top: 0px;
+	float: left;
+	background: url(../../img/bookshelf_body.jpg) repeat;
+	background-position: 0 30px;
+	display: block;
+}
+
+.slide_animate img {
+	display: block;
+}
+
+.products_box {
+	height: 20px;
+	margin-left: 30px;
+}
+
+.product {
+	float: left;
+	margin-right: 30px;
+	margin-top: 15px;
+	width: 120px;
+	height: 107px;
+	position: relative;
+	display: block;
+}
+
+.product img {
+	display: block;
+	border: none;
+	cursor: pointer;
+	width: 90px;
+	height: 107px;
+	text-align: right;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Issue</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body>
+		{% include "misc/navbar.html" %}
+		<div class="module-banner">
+			<p class="bg-warning text-warning module-title">
+				<i class="fa fa-bug"></i><strong> {{ issue.id }}</strong>
+			</p>
+		</div>
+		{% include "misc/msgbox.html" %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="center-block">
+						<form name="issue" id="issue" action="/issue/{{ issue.id }}" method="POST">
+							<div class="form-group">
+								<input type="hidden" class="form-control" name="id" autocomplete="off" data-name="id" data-mandatory="yes" value="{{ issue.id }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Subject</label>
+								<input type ="text" class="form-control" name="subject" autocomplete="on" data-name="subject" data-mandatory="yes" value="{{ issue.subject }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Description</label>
+								<textarea type="text" class="form-control" name="description" autocomplete="on" data-name="description" rows="10" data-mandatory="no">{{ issue.description }}</textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success">
+									<i class="fa fa-save"></i> Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

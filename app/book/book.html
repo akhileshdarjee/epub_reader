@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Book</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body>
+		{% include "misc/navbar.html" %}
+		<div class="module-banner">
+			<p class="bg-warning text-warning module-title">
+				<i class="fa fa-book"></i><strong> {{ book.id }}</strong>
+			</p>
+		</div>
+		{% include "misc/msgbox.html" %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="center-block">
+						<form name="book" id="book" action="/book/{{ book.id }}" method="POST" enctype="multipart/form-data">
+							<div class="form-group">
+								<label class="control-label">Upload Cover Photo</label>
+								<input type="file" class="form-control" name="book_cover_photo" data-name="book_cover_photo" data-mandatory="yes" id="book_cover_photo">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Upload eBook</label>
+								<input type="file" class="form-control" name="ebook" data-name="ebook" data-mandatory="yes" id="ebook">
+							</div>
+							<div class="form-group">
+								<input type="hidden" class="form-control" name="id" autocomplete="off" data-name="id" data-mandatory="yes" value="{{ book.id }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Book Name</label>
+								<input type ="text" class="form-control" name="book_name" autocomplete="on" data-name="book_name" data-mandatory="yes" value="{{ book.book_name }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Author</label>
+								<input type="text" class="form-control" name="author" autocomplete="on" data-name="author" data-mandatory="no" value="{{ book.author }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Publisher</label>
+								<input type="text" class="form-control" name="publisher" autocomplete="on" data-name="publisher" data-mandatory="no" value="{{ book.publisher }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Edition</label>
+								<input type="text" class="form-control" name="edition" autocomplete="on" data-name="edition" data-mandatory="no" value="{{ book.edition }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">Rate</label>
+								<input type="text" class="form-control" name="rate" autocomplete="off" data-name="rate" data-mandatory="no" value="{{ book.rate }}">
+							</div>
+							<div class="form-group">
+								<label class="control-label">More Details</label>
+								<textarea class="form-control" name="more_details" rows="5" autocomplete="off" data-name="more_details" data-mandatory="no" value="{{ book.more_details }}"></textarea>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Owner</label>
+								<input type="text" class="form-control" name="owner" autocomplete="off" data-name="owner" data-mandatory="no" value="{{ book.owner }}" disabled>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success">
+									<i class="fa fa-save"></i> Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../files/js/modules/book.js"></script>
+	</body>
+</html>

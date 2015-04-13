@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Browser Detect</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script type="text/javascript" src="../files/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../files/js/jquery-ui-1.10.4.js"></script>
+		<script type="text/javascript" src="../files/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../files/js/app.js"></script>
+		<link rel="stylesheet" href="../files/css/bootstrap.css">
+		<link rel="stylesheet" href="../files/css/jquery-ui-1.10.4.css">
+		<link rel="stylesheet" href="../files/css/font-awesome.css">
+		<link rel="stylesheet" href="../files/css/datepicker.css">
+		<link rel="stylesheet" href="../files/css/styles.css">
+		<style type="text/css">
+			.os-name {
+				color: #959595;
+				text-align: left;
+				margin-left: 8px;
+				padding-top: 8px;
+				font-weight: bold;
+			}
+			.progress-stats {
+				margin-right: 0px;
+				margin-left: 0px;
+				border-top: 1px solid #ddd;
+				background-color: #f7f7f9;
+				min-height: 32px;
+				text-align: left;
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+			.progress-padding {
+				padding: 2px 8px 0px 8px;
+			}
+			.success-percent {
+				font-size: 40px;
+				color: #959595;
+			}
+			.logged-in, .placed-orders {
+				font-weight: bold;
+			}
+		</style>
+		<script type="text/javascript">
+			window.app = true;
+		</script>
+	</head>
+	<body>
+		<div class="container main-body" style="padding-top:60px;">
+			<table class="table table-bordered text-center" id="order-stats">
+				<thead>
+					<tr class="active">
+						<th width="20%" class="text-center">OS</th>
+						<th width="*" class="text-center">Progress</th>
+						<th width="15%" class="text-center">Success Rate (%)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-os="Android">
+						<td style="vertical-align: middle;"><i class="fa fa-android fa-5x" style="color: #A4C739;"></i></td>
+						<td style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12 os-name">
+									ANDROID
+								</div>
+							</div>
+							<div class="progress-padding">
+								<div class="progress" style="height: 14px;">
+									<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+							<div class="progress-stats">
+								<div class="row" style="padding-top: 5px;">
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Logged In: 
+										<span class="logged-in">10</span>
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Orders Placed: 
+										<span class="placed-orders">9</span>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center success-percent" style="vertical-align: middle;">90%</td>
+					</tr>
+					<tr data-os="iPhone">
+						<td style="vertical-align: middle;"><i class="fa fa-apple fa-5x" style="color: #E6E6E6;"></i></td>
+						<td style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12 os-name">
+									iPHONE
+								</div>
+							</div>
+							<div class="progress-padding">
+								<div class="progress" style="height: 14px;">
+									<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+							<div class="progress-stats">
+								<div class="row" style="padding-top: 5px;">
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Logged In: 
+										<span class="logged-in">10</span>
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Orders Placed: 
+										<span class="placed-orders">9</span>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center success-percent" style="vertical-align: middle;">90%</td>
+					</tr>
+					<tr data-os="Windows Phone">
+						<td style="vertical-align: middle;"><i class="fa fa-windows fa-5x" style="color: #2D89EF;"></i></td>
+						<td style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12 os-name">
+									WINDOWS PHONE
+								</div>
+							</div>
+							<div class="progress-padding">
+								<div class="progress" style="height: 14px;">
+									<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+							<div class="progress-stats">
+								<div class="row" style="padding-top: 5px;">
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Logged In: 
+										<span class="logged-in">10</span>
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Orders Placed: 
+										<span class="placed-orders">9</span>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center success-percent" style="vertical-align: middle;">90%</td>
+					</tr>
+					<tr data-os="Blackberry">
+						<td style="vertical-align: middle;"><i class="fa fa-bold fa-5x"></i></td>
+						<td style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12 os-name">
+									BLACKBERRY
+								</div>
+							</div>
+							<div class="progress-padding">
+								<div class="progress" style="height: 14px;">
+									<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+							<div class="progress-stats">
+								<div class="row" style="padding-top: 5px;">
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Logged In: 
+										<span class="logged-in">10</span>
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Orders Placed: 
+										<span class="placed-orders">9</span>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center success-percent" style="vertical-align: middle;">90%</td>
+					</tr>
+					<tr data-os="Symbian">
+						<td style="vertical-align: middle;"><i class="fa fa-strikethrough fa-5x" style="color: #E3A21A;"></i></td>
+						<td style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12 os-name">
+									SYMBIAN
+								</div>
+							</div>
+							<div class="progress-padding">
+								<div class="progress" style="height: 14px;">
+									<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+							<div class="progress-stats">
+								<div class="row" style="padding-top: 5px;">
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Logged In: 
+										<span class="logged-in">10</span>
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Orders Placed: 
+										<span class="placed-orders">9</span>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center success-percent" style="vertical-align: middle;">90%</td>
+					</tr>
+					<tr data-os="Others">
+						<td style="vertical-align: middle;"><i class="fa fa-bolt fa-5x" style="color: #EE1111;"></i></td>
+						<td style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12 os-name">
+									OTHERS
+								</div>
+							</div>
+							<div class="progress-padding">
+								<div class="progress" style="height: 14px;">
+									<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									</div>
+								</div>
+							</div>
+							<div class="progress-stats">
+								<div class="row" style="padding-top: 5px;">
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Logged In: 
+										<span class="logged-in">10</span>
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6 text-warning">
+										Orders Placed: 
+										<span class="placed-orders">9</span>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center success-percent" style="vertical-align: middle;">90%</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table table-bordered" id="order-details">
+				<thead>
+					<tr class="active">
+						<th>Sr. No.</th>
+						<th>User Agent</th>
+						<th>Order Placed</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="device-details">
+						<td>1</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>2</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>3</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>4</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>5</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>6</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>7</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>8</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>9</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>10</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>11</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>12</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>13</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>14</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>15</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>16</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>17</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>18</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>19</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>20</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>21</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>22</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>23</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>24</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>25</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>26</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>27</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>28</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>29</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>30</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>31</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>32</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>33</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>34</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>35</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>36</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>37</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>38</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>39</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>40</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>41</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>42</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>43</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>44</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>45</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+					<tr class="device-details">
+						<td>46</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Android x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>47</td>
+						<td class="device-browser">Mozilla/5.0 (X11; iPhone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>48</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Windows Phone x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>49</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Blackberry x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">1</td>
+					</tr>
+					<tr class="device-details">
+						<td>50</td>
+						<td class="device-browser">Mozilla/5.0 (X11; Symbian x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36</td>
+						<td class="order-placed">0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var os = ["Android", "iPhone", "Windows Phone", "Blackberry", "Symbian"];
+				var order_stats = {"Android": {"logged_in": 0, "order_placed": 0}, "iPhone": {"logged_in": 0, "order_placed": 0}, "Windows Phone": {"logged_in": 0, "order_placed": 0}, "Blackberry": {"logged_in": 0, "order_placed": 0}, "Symbian": {"logged_in": 0, "order_placed": 0}, "Others": {"logged_in": 0, "order_placed": 0}};
+				var rows = $("table#order-details > tbody > tr.device-details");
+				$.each(rows, function(device_idx, device) {
+					var user_browser = $(device).find('.device-browser').html();
+					var order_placed = $(device).find('.order-placed').html();
+					$.each(os, function(os_idx, device_os) {
+						var os_found = user_browser.search(device_os);
+						if (os_found != -1) {
+							order_stats[device_os]["logged_in"] += 1;
+							if (order_placed == 1) {
+								order_stats[device_os]["order_placed"] += 1;
+							}
+							return false;
+						}
+						if (os_found == -1 && os_idx == 4) {
+							order_stats["Others"]["logged_in"] += 1;
+							if (order_placed == 1) {
+								order_stats["Others"]["order_placed"] += 1;
+							}
+						}
+					});
+				});
+				$.each(order_stats, function(mobile_os, stats) {
+					var stats_row = $('#order-stats > tbody > tr[data-os="' + mobile_os + '"]');
+					if (stats["logged_in"] == 0 && stats["order_placed"] == 0) {
+						var success_rate = 0;
+					}
+					else {
+						var success_rate = Math.round((stats["order_placed"] / stats["logged_in"]) * 100);
+					}
+					$(stats_row).find('.progress-bar').attr("aria-valuenow", success_rate);
+					$(stats_row).find('.progress-bar').attr("style", "width: " + success_rate + "%;");
+					$(stats_row).find('.logged-in').html(stats["logged_in"]);
+					$(stats_row).find('.placed-orders').html(stats["order_placed"]);
+					$(stats_row).find('.success-percent').html(success_rate + "%");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Search</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body>
+		{% include "misc/navbar.html" %}
+		{% include "misc/msgbox.html" %}
+		<div class="module-banner">
+			<p class="bg-warning text-warning module-title">
+				<i class="fa fa-search"></i><strong> Search</strong>
+			</p>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="input-group margin-bottom-sm">
+						<input type="text" name="search" id="search_text" class="form-control" placeholder="Search">
+						<span class="input-group-btn">
+							<button class="btn btn-default" id="search_books">
+								<i class="fa fa-search fa-fw"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="checkbox">
+						<label class="control-label">
+							<input type="checkbox" name="by_id" id="by_id" data-name="enabled" checked disabled>By ID
+						</label>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="checkbox">
+						<label class="control-label">
+							<input type="checkbox" name="by_name" id="by_name">By Name
+						</label>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="checkbox">
+						<label class="control-label">
+							<input type="checkbox" name="by_author" id="by_author">By Author
+						</label>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="checkbox">
+						<label class="control-label">
+							<input type="checkbox" name="by_publisher" id="by_publisher">By Publisher
+						</label>
+					</div>
+				</div>
+			</div>
+			<br><br><br>
+			<div class="row">
+				<div class="col-md-12" id="result_area">
+					<table class="table table-bordered table-hover" name="result_table" id="result_table">
+						<thead>
+							<tr class="active">
+								<th>Book ID</th>
+								<th>Book Name</th>
+								<th>Edition</th>
+								<th>Author</th>
+								<th>Publisher</th>
+								<th>Rate</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../files/js/modules/search.js"></script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Registration</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body>
+		{% include "misc/msgbox.html" %}
+		<div class="container">
+			<div class="row" style="margin-top:50px;">
+				<div class="col-sm-offset-4 col-sm-4">
+					<form name="registration" id="registration" action="/registration" method="POST">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4><i class="fa fa-user"></i> &nbsp;Create an Account</h4>
+							</div>
+							<div class="panel-body" style="padding:50px;">
+								<div class="form-group">
+									<input type="text" class="form-control" name="first_name" placeholder="First Name">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="last_name" placeholder="Last Name">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="login_id" placeholder="Login ID">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="dob" id="datepicker" placeholder="Date of Birth">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-success btn-block">
+										<i class="fa fa-arrow-circle-right"></i> Register
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="files/js/modules/registration.js"></script>
+	</body>
+</html>

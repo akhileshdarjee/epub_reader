@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ module_title }}'s List</title>
+		{% include "misc/headers.html" %}
+	</head>
+	<body>
+		{% include "misc/navbar.html" %}
+		{% include "misc/msgbox.html" %}
+		<div class="wrapper">
+			<div class="module-banner">
+				<p class="bg-warning text-warning module-title">
+					<i class="fa fa-book"></i><strong> {{ module_title }}'s List</strong>
+				</p>
+			</div>
+			<div class="action-bar" id="action-bar">
+				<span class="action" id="refresh">
+					<i class="fa fa-refresh"></i> Refresh
+				</span>
+				<span class="action" id="new">
+					<i class="fa fa-plus"></i> New
+				</span>
+				<span class="action" id="check_all">
+					<i class="fa fa-check"></i> Check All
+				</span>
+				<span class="action" id="delete">
+					<i class="fa fa-times-circle"></i> Delete
+				</span>
+			</div>
+		</div>
+		<div class="container records-list">
+			{% if records %}
+				{% for record in records %}
+					<div class="row records">
+						<div class="col-md-1">
+							<div class="checkbox">
+								<label class="control-label">
+									<input type="checkbox" name="check" data-name="check" data-id="{{ record.id }}">
+								</label>
+							</div>
+						</div>
+						<div class="col-md-11">
+							<div class="form-group">
+								<label class="control-label">
+									<a href="{{ module }}/{{ record.id }}">{{ record.id }}</a>
+								</label>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="well">
+					<h4>No {{ module_title }}s found</h4><hr>
+					<button class="btn btn-primary" id="new_record"> Make New {{ module_title }}</button>
+				</div>
+			{% endif %}
+		</div>
+		<script type="text/javascript" src="../files/js/app.js"></script>
+	</body>
+</html>

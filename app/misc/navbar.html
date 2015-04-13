@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/app"><i class="fa fa-book fa-fw"></i> Library</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<!-- <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-list fa-fw"></i> History
+					</a>
+					<ul class="dropdown-menu" id="history"></ul>
+				</li> -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-star fa-fw"></i> Favorites
+					</a>
+					<ul class="dropdown-menu" id="favorites">
+						{% for fav in favorites %}
+							<li><a href="/epub_reader/{{ fav.book }}" target="_blank"><i class="fa fa-book fa-fw"></i> {{ fav.book_name }}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-question fa-fw"></i> Help</a>
+					<ul class="dropdown-menu">
+						<li class="show-issue"><a href="#"><i class="fa fa-bug fa-fw"></i> Report an Issue</a></li>
+						<li class="show-about"><a href="#"><i class="fa fa-info-circle fa-fw"></i> About</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user }} <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="/profile/{{ login_id }}"><i class="fa fa-user fa-fw"></i> Profile</a></li>
+						<li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<script type="text/javascript" src="../files/js/app.js"></script>
